@@ -7,6 +7,8 @@ function getRandomValue (minValue,maxValue) {
   }
 }
 
+getRandomValue(0,10);
+
 function checkStringLength(string, maxLength) {
   if (string.length <= maxLength) {
     return true;
@@ -16,3 +18,4 @@ function checkStringLength(string, maxLength) {
   }
 }
 
+checkStringLength('Я изучаю JS', 20);
