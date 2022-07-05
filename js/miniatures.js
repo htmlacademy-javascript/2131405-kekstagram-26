@@ -9,6 +9,7 @@
 </template> */
 
 import {createPhotosDescriptions} from './data.js';
+import {getToBigPicture} from './big-picture.js';
 let descriptions = createPhotosDescriptions();
 let pictureTemplate = document.querySelector('#picture').content;
 let pictureElement = pictureTemplate.querySelector('a');
@@ -23,5 +24,10 @@ export function createPhoto() {
     let pictureComments = newPicture.querySelector('.picture__comments');
     pictureComments.textContent = descriptions[i].comments.length;
     pictures.appendChild(newPicture);
+
+    pictures.children[i+2].addEventListener('click', function() {
+      getToBigPicture(descriptions[i]);
+    })
   }
+
 }
