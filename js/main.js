@@ -2,7 +2,7 @@ import {createPhotosDescriptions} from './data.js';
 import {getRandomValue} from './util.js';
 import {checkStringLength} from './util.js';
 import {createPhoto} from './miniatures.js';
-import {getToBigPicture} from './big-picture.js';
+import {uploadImage} from './form.js';
 
 getRandomValue(0,10);
 
@@ -12,7 +12,4 @@ createPhotosDescriptions();
 
 createPhoto();
 
-pictures.children[i+2].addEventListener('click', function() {
-  getToBigPicture(descriptions[i]);
-  document.body.classList.toggle('modal-open');
-})
+uploadImage ()
