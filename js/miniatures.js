@@ -25,7 +25,7 @@ export function createPhoto() {
     pictureComments.textContent = descriptions[i].comments.length;
     pictures.appendChild(newPicture);
 
-    pictures.children[i+2].addEventListener('click', function() {
+    newPicture.addEventListener('click', function() {
       getToBigPicture(descriptions[i]);
     })
   }

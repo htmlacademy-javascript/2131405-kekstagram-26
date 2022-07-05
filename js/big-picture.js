@@ -1,3 +1,16 @@
+export function closeTab (triggerElement, listenElement) {
+  document.querySelector(`${triggerElement}`).addEventListener('click', function() {
+    listenElement.classList.add('hidden');
+    document.body.classList.remove('modal-open');
+  })
+  document.addEventListener('keydown', function(evt) {
+    if (evt.keyCode === 27) {
+      listenElement.classList.add('hidden');
+      document.body.classList.remove('modal-open');
+    }
+  })
+}
+
 export function getToBigPicture(picture) {
   let bigPicture = document.querySelector('.big-picture');
   bigPicture.classList.toggle('hidden');
@@ -21,14 +34,6 @@ export function getToBigPicture(picture) {
   bigPicture.querySelector('.social__comment-count').classList.add('hidden');
   bigPicture.querySelector('.social__comment-count').classList.add('hidden');
 
-  document.getElementById('picture-cancel').addEventListener('click', function() {
-    bigPicture.classList.add('hidden');
-    document.body.classList.remove('modal-open');
-  })
-  document.addEventListener('keydown', function(evt) {
-    if (evt.keyCode === 27) {
-      bigPicture.classList.add('hidden');
-      document.body.classList.remove('modal-open');
-    }
-  })
+  closeTab('#picture-cancel',bigPicture);
+
 }
